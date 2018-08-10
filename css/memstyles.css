@@ -1,13 +1,11 @@
 
-
 .body {
     display: flex;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
     background-color: rgb(127, 164, 185);
-} 
-
+}
 
 .menu-section {
     display: flex;
@@ -40,10 +38,12 @@
     border-radius: 4px;
     border-color: lightgray;
 }
+
 .menu-section-item h4 {
     margin: 6px 0 4px 0;
     border-bottom: 1px solid lightgrey;
 }
+
 .menu-section-item:nth-child(1) {
     margin-left: 50px;
 }
@@ -56,7 +56,7 @@
     width: 100%;
     max-width: 1080px;
     height: 100%;
-    align-self: center
+    align-self: center;
 }
 
 .tile:nth-child(6n+1) {
@@ -70,9 +70,11 @@
 .tile:nth-child(6n+3) {
     margin-right: 2%;
 }
+
 .tile:nth-child(6n+4) {
     margin-right: 2%;
 }
+
 .tile:nth-child(6n+5) {
     margin-right: 2%;
 }
@@ -80,7 +82,6 @@
 .tile:nth-child(-n+30) {
     margin-bottom: 2%;
 }
-
 
 .tile {
     position: relative;
@@ -120,6 +121,7 @@
 .won {
     box-shadow: none;
 }
+
 .won .front {
     opacity: 0;
 }
@@ -165,15 +167,13 @@
     -o-transition: opacity 1s .5s ease-in-out;
 
 }
+
 .end-game.over {
     left: 50%;
     z-index: 99;
     opacity: 1;
 }
 
-
-
-/* add js to activate on-click instead of hover */
 .tile-clicked {
     cursor: pointer;
     transform: rotateY(180deg);
@@ -207,13 +207,14 @@
       transform: rotate(360deg);
     }
   }
-  .game-over {
+  
+.game-over {
     -webkit-animation: rotating 2s linear infinite;
     -moz-animation: rotating 2s linear infinite;
     -ms-animation: rotating 2s linear infinite;
     -o-animation: rotating 2s linear infinite;
     animation: rotating 2s linear infinite;
-  }
+ }
 
 .back.image-1::after {
     content: "\f241";
