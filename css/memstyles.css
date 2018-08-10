@@ -1,0 +1,524 @@
+
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    background-color: rgb(127, 164, 185);
+} 
+
+
+.menu-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1080px;
+    height: 150px;
+    background-color: lightblue;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 16px 3px rgb(73, 92, 113);
+}
+
+.menu-section-item {
+    width: 30%;
+    text-align: center;
+    margin: 9px;
+    background-color: lightseagreen;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
+    -moz-box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
+    box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
+}
+
+.shuffle-button {
+    background: linear-gradient(35deg, #13dcb6, #005d80);
+    font-size: 1em;
+    padding: 5px 30px;
+    margin: 25px;
+    border-radius: 4px;
+    border-color: lightgray;
+}
+.menu-section-item h4 {
+    margin: 6px 0 4px 0;
+    border-bottom: 1px solid lightgrey;
+}
+.menu-section-item:nth-child(1) {
+    margin-left: 50px;
+}
+
+.menu-section-item:nth-child(3) {
+    margin-right: 50px;
+}
+
+.main {
+    width: 100%;
+    max-width: 1080px;
+    height: 100%;
+    align-self: center
+}
+
+.tile:nth-child(6n+1) {
+    margin-right: 2%;
+}
+
+.tile:nth-child(6n+2) {
+    margin-right: 2%;
+}
+
+.tile:nth-child(6n+3) {
+    margin-right: 2%;
+}
+.tile:nth-child(6n+4) {
+    margin-right: 2%;
+}
+.tile:nth-child(6n+5) {
+    margin-right: 2%;
+}
+
+.tile:nth-child(-n+30) {
+    margin-bottom: 2%;
+}
+
+
+.tile {
+    position: relative;
+    float: left;
+    width: 15%;
+    padding-bottom: 15%;
+    box-sizing: border-box;
+    transition: 1s;
+    transform-style: preserve-3d;
+    z-index: 99;
+    box-shadow: 0 0 13px 1px rgb(73, 92, 113);
+    border-radius: 9px;
+}
+
+.front {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    transform: translate(-50%,-50%) rotateY(0deg);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    background: linear-gradient(-45deg, rgba(0,0,0,1), blue);
+    border-radius: 9px;
+    -webkit-transition: opacity 2s 3s ease-in-out;
+    -moz-transition: opacity 2s 3s ease-in-out;
+    -ms-transition: opacity 2s 3s ease-in-out;
+    -o-transition: opacity 2s 3s ease-in-out;
+
+}
+
+.won {
+    box-shadow: none;
+}
+.won .front {
+    opacity: 0;
+}
+
+.back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+    transform: translate(-50%,-50%) rotateY(180deg);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    z-index: -2;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.end-game {
+    position: absolute;
+    top: 50%;
+    left: -1000px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    transform: translate(-50%,-50%);
+    color: rgb(155, 17, 155);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6em;
+    opacity: 0;
+    -webkit-transition: opacity 1s .5s ease-in-out;
+    -moz-transition: opacity 1s .5s ease-in-out;
+    -ms-transition: opacity 1s .5s ease-in-out;
+    -o-transition: opacity 1s .5s ease-in-out;
+
+}
+.end-game.over {
+    left: 50%;
+    z-index: 99;
+    opacity: 1;
+}
+
+
+
+/* add js to activate on-click instead of hover */
+.tile-clicked {
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .game-over {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+  }
+
+.back.image-1::after {
+    content: "\f241";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-2::after {
+    content: "\f55e";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-3::after {
+    content: "\f207";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-4::after {
+    content: "\f242";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-5::after {
+    content: "\f1e2";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-6::after {
+    content: "\f1b3";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-7::after {
+    content: "\f0fb";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-8::after {
+    content: "\f4ba";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-9::after {
+    content: "\f417";
+    font-family: 'Font Awesome 5 Brands' !important;
+    font-size: 100px;
+    font-weight: 400;
+    color: hotpink;
+}
+
+.back.image-10::after {
+    content: "\f286";
+    font-family: 'Font Awesome 5 Brands' !important;
+    font-size: 100px;
+    font-weight: 400;
+    color: hotpink;
+}
+
+.back.image-11::after {
+    content: "\f027";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-12::after {
+    content: "\f028";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-13::after {
+    content: "\f0e7";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-14::after {
+    content: "\f1b9";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-15::after {
+    content: "\f5de";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-16::after {
+    content: "\f0c4";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-17::after {
+    content: "\f569";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.back.image-18::after {
+    content: "\f1b0";
+    font-family: 'Font Awesome 5 Free' !important;
+    font-size: 100px;
+    font-weight: 900;
+    color: hotpink;
+}
+
+.front::after {
+    content: "\f3b9";
+    font-family: 'Font Awesome 5 Brands' !important;
+    font-size: 70px;
+    font-weight: 900;
+    color: lightskyblue;
+}
+
+@media all and (max-width:900px) {
+    .back.image-1::after {
+        font-size: 70px;
+    }
+    
+    .back.image-2::after {
+        font-size: 70px;
+    }
+    
+    .back.image-3::after {
+        font-size: 70px;
+    }
+    
+    .back.image-4::after {
+        font-size: 70px;
+    }
+    
+    .back.image-5::after {
+        font-size: 70px;
+    }
+    
+    .back.image-6::after {
+        font-size: 70px;
+    }
+    
+    .back.image-7::after {
+        font-size: 70px;
+    }
+    
+    .back.image-8::after {
+        font-size: 70px;
+    }
+    
+    .back.image-9::after {
+        font-size: 70px;
+    }
+    
+    .back.image-10::after {
+        font-size: 70px;
+    }
+    
+    .back.image-11::after {
+        font-size: 70px;
+    }
+    
+    .back.image-12::after {
+        font-size: 70px;
+    }
+    
+    .back.image-13::after {
+        font-size: 70px;
+    }
+    
+    .back.image-14::after {
+        font-size: 70px;
+    }
+    
+    .back.image-15::after {
+        font-size: 70px;
+    }
+    
+    .back.image-16::after {
+        font-size: 70px;
+    }
+    
+    .back.image-17::after {
+        font-size: 70px;
+    }
+    
+    .back.image-18::after {
+        font-size: 70px;
+    }
+    
+    .front::after {
+        font-size: 40px;
+    }
+}
+
+@media all and (max-width:900px) {
+    .back.image-1::after {
+        font-size: 50px;
+    }
+    
+    .back.image-2::after {
+        font-size: 50px;
+    }
+    
+    .back.image-3::after {
+        font-size: 50px;
+    }
+    
+    .back.image-4::after {
+        font-size: 50px;
+    }
+    
+    .back.image-5::after {
+        font-size: 50px;
+    }
+    
+    .back.image-6::after {
+        font-size: 50px;
+    }
+    
+    .back.image-7::after {
+        font-size: 50px;
+    }
+    
+    .back.image-8::after {
+        font-size: 50px;
+    }
+    
+    .back.image-9::after {
+        font-size: 50px;
+    }
+    
+    .back.image-10::after {
+        font-size: 50px;
+    }
+    
+    .back.image-11::after {
+        font-size: 50px;
+    }
+    
+    .back.image-12::after {
+        font-size: 50px;
+    }
+    
+    .back.image-13::after {
+        font-size: 50px;
+    }
+    
+    .back.image-14::after {
+        font-size: 50px;
+    }
+    
+    .back.image-15::after {
+        font-size: 50px;
+    }
+    
+    .back.image-16::after {
+        font-size: 50px;
+    }
+    
+    .back.image-17::after {
+        font-size: 50px;
+    }
+    
+    .back.image-18::after {
+        font-size: 50px;
+    }
+    
+    .front::after {
+        font-size: 40px;
+    }
+}
