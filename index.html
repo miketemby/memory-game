@@ -10,243 +10,39 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     </head>
     <body class="body">
-        <section class="menu-section">
-            <div class="menu-section-item">
-                <h4>Shuffle</h4>
-                <button type="button" class="shuffle-button">Go</button>
+        <div id="endgame-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <ul class="results"></ul>
             </div>
+        </div>
+        <section class="menu-section">
             <div class="menu-section-item">
                 <h4>Info Log</h4>
                 <p class="info">Shuffle To Start</p>
             </div>
             <div class="menu-section-item">
-                <h4>Score</h4>
+                <section class="stopwatch-container">
+                    <h4>Score</h4>
+                    <div class="stopwatch"></div>
+                    
+                </section>
                 <p class="score"></p>
+            </div>
+            <div class="buttons">
+                <button type="button" id="easy-button" class="mode-button">Easy</button>
+                <button type="button" id="hard-button" class="mode-button">Hard</button>
+                <button type="button" id="master-button" class="mode-button">Ninja</button>
+                <button type="button" id="mayhem-button" class="mode-button">Mayhem!!</button>
+                <button type="button" id="shuffle-button" class="shuffle-button">SHUFFLE</button>
+                <button type="button" id="reset-button" class="reset-button">RESET</button>
             </div>
         </section>
         <section class="main">
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                 </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                    </div>
-                    <div class="back">
-                    </div>
-                </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                    </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                    </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-            <div class="tile">
-                <div class="front">
-                </div>
-                <div class="back">
-                </div>
-            </div>
-        </section>
-        <section class="end-game">
-            <h1>GAME OVER</h1>
         </section>
     </body>
     <footer>
         <script src="js/memory.js"></script>
+        <script src="js/stopwatch.js"></script>
     </footer>
 </html>
