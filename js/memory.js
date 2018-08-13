@@ -665,6 +665,7 @@ function twoClicked() {
                 const winText = '<h1>Contratulations!</h1><p>You completed ' + '<strong class="mode">'+mode+'</strong>' + ' mode in ' + score + ' turns</p><p>Your time was:</p>';
 
                 modal_content.insertAdjacentHTML('afterbegin', winText);
+                modal_content.insertAdjacentHTML('beforeend', stars);
 
                 stopwatch.lap();
                 stopwatch.stop();
