@@ -4,19 +4,16 @@
 
 // Stop watch login starts here
 
-const _start = document.querySelector('#shuffle-button');
 
 const _stop = document.querySelector('#reset-button');
 
-
-_start.addEventListener('click', function() {
-    stopwatch.start();
-});
 
 _stop.addEventListener('click', function() {
     stopwatch.stop();
     stopwatch.reset();
 });
+
+
 
 
 class Stopwatch {
