@@ -124,13 +124,19 @@
 
 
 .reset-button {
-    width: 200px;
+    width: 100%;
     background: linear-gradient(35deg , #00ffcf, #0389bb);
     font-size: 1em;
     padding: 5px 30px;
     margin: 0 0 1% .5%;
     border-radius: 4px;
     border-color: lightgray;
+    display: block;
+    margin: 20px auto;
+}
+
+.modal-content .reset-button {
+    width: 200px;
     display: block;
     margin: 20px auto;
 }
