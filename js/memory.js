@@ -39,6 +39,9 @@ const randomFacts = [
 // default mode when page is opened
 easy();
 
+star_rating(score, 8);
+document.querySelector('#star-rating').innerHTML = '';
+document.querySelector('#star-rating').insertAdjacentHTML('afterbegin', stars);
 
 // add event listener to reset button and run whichever mode we are in
 reset_button.addEventListener('click', function() {
@@ -458,35 +461,47 @@ function isInt(n) {
 }
 
 function star_rating(score, total) {
+    stars = '';
     let yourStars = 0;
     let subStars = 0;
     let emptyStars = 0;
 
     if (mode == 'easy') {
 
-        subStars = (score - total) / .8;
-        yourStars = 10 - subStars;
-        whole = Math.floor( yourStars );
-        emptyStars = 10 - Math.ceil( yourStars );
+        if(!(score - total <=0) ) {
+            subStars = (score - total) / .8;
+            yourStars = 10 - subStars;
+            whole = Math.floor( yourStars );
+            emptyStars = 10 - Math.ceil( yourStars );
+        } else {
+
+            emptyStars = 0;
+            whole = 10;
+
+        }
+        
 
 
     } else {
 
-        subStars = (score - total) / 1.8;
-        yourStars = 10 - subStars;
-        whole = Math.floor( yourStars );
-        emptyStars = 10 - Math.ceil( yourStars );
+        if(!(score - total <=0) ) {
+            subStars = (score - total) / 1.8;
+            yourStars = 10 - subStars;
+            whole = Math.floor( yourStars );
+            emptyStars = 10 - Math.ceil( yourStars );
+        } else {
+
+            emptyStars = 0;
+            whole = 10;
+        }
     }
 
-    console.log(subStars);
-    console.log(yourStars);
-    console.log(whole);
-    console.log(emptyStars);
+    if(emptyStars >= 9) {
 
-    if(subStars >= 10) {
+        stars += '<i class="fas fa-star"></i>';
 
-        for (let i = 0; i < 10; i++) {
-            stars += '<i class="fas fa-star"></i>';
+        for (let i = 0; i < 9; i++) {
+            stars += '<i class="far fa-star"></i>';
         }
 
     } else {
@@ -582,6 +597,17 @@ function twoClicked() {
             }, 1000);
     }
 
+    if(mode == 'easy') {
+        
+        star_rating(score, 8);
+        document.querySelector('#star-rating').innerHTML = '';
+        document.querySelector('#star-rating').insertAdjacentHTML('afterbegin', stars);
+    } else {
+
+        star_rating(score, 18);
+        document.querySelector('#star-rating').innerHTML = '';
+        document.querySelector('#star-rating').insertAdjacentHTML('afterbegin', stars);
+    }
     document.querySelector('.score').textContent = score;
 
     // flip back over after 2 seconds
@@ -658,10 +684,12 @@ function reset() {
         card.classList.remove('game-over');
         card.lastElementChild.className = 'back';
     }
-
-    start = true;
     score = 0;
-    stars = '';
+
+    star_rating(score, 8);
+    document.querySelector('#star-rating').innerHTML = '';
+    document.querySelector('#star-rating').insertAdjacentHTML('afterbegin', stars);
+    start = true;
     stopwatch.clear();
     stopwatch.stop();
     stopwatch.reset();
