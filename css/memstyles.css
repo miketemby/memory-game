@@ -4,46 +4,90 @@
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    max-width: 1080px;
+    align-self: center;
+    margin: auto;
+    box-shadow: 0 0 12px 2px lightgrey;
+    padding: 9px;
+    border-radius: 5px;
 }
 
 .menu-section {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    width: 30%;
+    max-width: 324px;
+    padding-top: 1%;
+    /* background-color: lightblue; */
+    border-radius: 5px;
+    /* box-shadow: 0 0 16px 3px rgb(191, 191, 191); */
+}
+
+.top-menu-section { 
+    display: flex;
     width: 100%;
     max-width: 1080px;
-    background-color: lightblue;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 16px 3px rgb(191, 191, 191);
+    height: 100px;
 }
 
-.menu-section-item {
-    width: 48%;
-    text-align: center;
-    margin: 1%;
-    background: linear-gradient(0deg, #00ffcf, #0389bb);
-    border-radius: 5px;
-    -webkit-box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
-    -moz-box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
-    box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
-}
-
-.menu-section-item h4 {
-    margin: 6px 0 4px 0;
+.top-menu-section h4 { 
     border-bottom: 1px solid lightgrey;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    /* text-decoration: underline; */
+    letter-spacing: 5px;
+    padding: 5px 0px;
+    color: white;
+}
+
+.menu-section-item-left {
+    display: flex;
+    width: 30%;
+    text-align: center;
+    /* margin: 1%; */
+    background: linear-gradient(0deg, #00ffcf, #0389bb);
+    border-radius: 5px 0 0 5px;
+/*     -webkit-box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
+    -moz-box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
+    box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1); */
+}
+
+.score-container {
+    position: relative;
+    width: 50%;
+}
+
+.score {
+    margin: 0;
+    padding-top: 12%;
+}
+.menu-section-item-right {
+    width: 70%;
+    text-align: center;
+    /* margin: 1%; */
+    background: linear-gradient(0deg, #00ffcf, #0389bb);
+    border-radius: 0 5px 5px 0;
+/*     -webkit-box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
+    -moz-box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1);
+    box-shadow: inset 0px 0px 38px -3px rgba(120,112,120,1); */
+}
+.menu-section-item-right p {
+    padding: 0 11px;
 }
 
 .stopwatch-container {
     position: relative;
+    width: 50%;
 }
 
 .stopwatch {
     display: flex;
-    position: absolute;
-    top: 0;
-    right: 15px;
+    padding-top: 12%;
+    justify-content: center;
 }
   
 .results {
@@ -65,7 +109,7 @@
 }
 
 .mode-button {
-    width: 23%;
+    width: 100%;
     margin: 0 1% 1% 1%;
     border-radius: 4px;
     border-color: lightgray;
@@ -78,36 +122,57 @@
     background: linear-gradient(35deg, #ff4d30, #e223b4);
 }
 
-.shuffle-button {
-    width: 48%;
-    background: linear-gradient(35deg, #00ffcf, #0389bb);
-    font-size: 1em;
-    padding: 5px 30px;
-    margin: 0 .5% 1% 0;
-    border-radius: 4px;
-    border-color: lightgray;
-}
+
 .reset-button {
-    width: 48%;
+    width: 200px;
     background: linear-gradient(35deg , #00ffcf, #0389bb);
     font-size: 1em;
     padding: 5px 30px;
     margin: 0 0 1% .5%;
     border-radius: 4px;
     border-color: lightgray;
+    display: block;
+    margin: 20px auto;
 }
 
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mode-text {
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: 0;
+    text-decoration: underline;
+    letter-spacing: 5px;
+}
 .mode-button:hover, .shuffle-button:hover, .reset-button:hover {
     background: linear-gradient(35deg, #f7735f, #ff4ad5);
     letter-spacing: 3px;
 }
 
 .main {
-    width: 100%;
-    max-width: 1080px;
+    width: 69%;
+    max-width: 756px;
     height: 100%;
     align-self: center;
+    padding: 1% 0 0 1%;
 }
+
+@-webkit-keyframes blackWhite {  
+    0% { background-color: rgb(255, 255, 255);  }
+    50% { background: radial-gradient(red, white); }
+    100% { background-color: rgb(255, 255, 255); }
+  }
+  
+.mayhem {
+    -webkit-animation-name: blackWhite;  
+    -webkit-animation-iteration-count: infinite;  
+    -webkit-animation-duration: 1s; 
+} 
+
 
 .tile:nth-child(6n+1) {
     margin-right: 2%;
@@ -139,7 +204,7 @@
     width: 15%;
     padding-bottom: 15%;
     box-sizing: border-box;
-    transition: 1s;
+    transition: .6s;
     transform-style: preserve-3d;
     z-index: 99;
     box-shadow: 0 0 13px 1px rgb(73, 92, 113);
@@ -165,6 +230,9 @@
 .tile.easy:nth-child(-n+12) {
     margin-bottom: 2%;
 }
+.tile.easy:nth-child(n+13) {
+    margin-bottom: 0;
+}
 
 .tile.easy {
     width: 23.5%;
@@ -175,8 +243,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 100%;
-    width: 100%;
+    height: 100.1%;
+    width: 100.1%;
     background-color: black;
     transform: translate(-50%,-50%) rotateY(0deg);
     color: white;
@@ -184,7 +252,7 @@
     align-items: center;
     justify-content: center;
     z-index: -1;
-    background: linear-gradient(-45deg, rgb(140, 121, 121), blue);
+    background: linear-gradient(-45deg, rgb(142, 78, 131), blue);
     border-radius: 9px;
     -webkit-transition: opacity 2s 3s ease-in-out;
     -moz-transition: opacity 2s 3s ease-in-out;
@@ -247,6 +315,10 @@
     left: 50%;
     z-index: 99;
     opacity: 1;
+}
+.stars {
+    color: rgb(0, 179, 191);
+    font-size: 1.3em;
 }
 
 .tile-clicked {
@@ -349,148 +421,110 @@
     animation: rotating 2s linear infinite;
  }
 
-.back.image-1::after {
-    content: "\f241";
+
+
+ .back.image-1::after
+ , .back.image-2::after
+ , .back.image-3::after
+ , .back.image-4::after
+ , .back.image-5::after
+ , .back.image-6::after
+ , .back.image-7::after
+ , .back.image-8::after
+ , .back.image-11::after
+ , .back.image-12::after
+ , .back.image-13::after
+ , .back.image-14::after
+ , .back.image-15::after
+ , .back.image-16::after
+ , .back.image-17::after
+ , .back.image-18::after {
     font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
+    font-size: 80px;
     font-weight: 900;
     color: hotpink;
+ }
+
+ .back.image-9::after
+ , .back.image-10::after {
+    font-family: 'Font Awesome 5 Brands' !important;
+    font-size: 80px;
+    font-weight: 400;
+    color: hotpink;
+ }
+
+
+
+.back.image-1::after {
+    content: "\f241";
 }
 
 .back.image-2::after {
     content: "\f55e";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-3::after {
     content: "\f207";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-4::after {
     content: "\f242";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-5::after {
     content: "\f1e2";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-6::after {
     content: "\f1b3";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-7::after {
     content: "\f0fb";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-8::after {
     content: "\f4ba";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-9::after {
     content: "\f417";
-    font-family: 'Font Awesome 5 Brands' !important;
-    font-size: 100px;
-    font-weight: 400;
-    color: hotpink;
 }
 
 .back.image-10::after {
     content: "\f286";
-    font-family: 'Font Awesome 5 Brands' !important;
-    font-size: 100px;
-    font-weight: 400;
-    color: hotpink;
 }
 
 .back.image-11::after {
     content: "\f027";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-12::after {
     content: "\f028";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-13::after {
     content: "\f0e7";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-14::after {
     content: "\f1b9";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-15::after {
     content: "\f5de";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-16::after {
     content: "\f0c4";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-17::after {
     content: "\f569";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .back.image-18::after {
     content: "\f1b0";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 100px;
-    font-weight: 900;
-    color: hotpink;
 }
 
 .front::after {
@@ -501,302 +535,440 @@
     color: lightskyblue;
 }
 
-.mayhem-1::after {
-    content: "\f241";
+
+
+.mayhem-1::after
+, .mayhem-2::after
+, .mayhem-3::after
+, .mayhem-4::after
+, .mayhem-5::after
+, .mayhem-6::after
+, .mayhem-7::after
+, .mayhem-8::after
+, .mayhem-11::after
+, .mayhem-12::after
+, .mayhem-13::after
+, .mayhem-14::after
+, .mayhem-15::after
+, .mayhem-16::after
+, .mayhem-17::after
+, .mayhem-18::after {
     font-family: 'Font Awesome 5 Free' !important;
     font-size: 70px;
     font-weight: 900;
-    color: #4dd2b5;;
+    color: #4dd2b5;
+}
+
+.mayhem-9::after
+, .mayhem-10::after {
+    font-family: 'Font Awesome 5 Brands' !important;
+    font-size: 70px;
+    font-weight: 400;
+    color: #4dd2b5;
+}
+
+.mayhem-1::after {
+    content: "\f241";
 }
 
 .mayhem-2::after {
     content: "\f55e";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-3::after {
     content: "\f207";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-4::after {
     content: "\f242";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-5::after {
     content: "\f1e2";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-6::after {
     content: "\f1b3";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-7::after {
     content: "\f0fb";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-8::after {
     content: "\f4ba";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-9::after {
     content: "\f417";
-    font-family: 'Font Awesome 5 Brands' !important;
-    font-size: 70px;
-    font-weight: 400;
-    color: #4dd2b5;;
 }
 
 .mayhem-10::after {
     content: "\f286";
-    font-family: 'Font Awesome 5 Brands' !important;
-    font-size: 70px;
-    font-weight: 400;
-    color: #4dd2b5;;
 }
 
 .mayhem-11::after {
     content: "\f027";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-12::after {
     content: "\f028";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-13::after {
     content: "\f0e7";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-14::after {
     content: "\f1b9";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-15::after {
     content: "\f5de";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-16::after {
     content: "\f0c4";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-17::after {
     content: "\f569";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 .mayhem-18::after {
     content: "\f1b0";
-    font-family: 'Font Awesome 5 Free' !important;
-    font-size: 70px;
-    font-weight: 900;
-    color: #4dd2b5;;
 }
 
 @media all and (max-width:900px) {
-    .back.image-1::after {
-        font-size: 70px;
-    }
-    
-    .back.image-2::after {
-        font-size: 70px;
-    }
-    
-    .back.image-3::after {
-        font-size: 70px;
-    }
-    
-    .back.image-4::after {
-        font-size: 70px;
-    }
-    
-    .back.image-5::after {
-        font-size: 70px;
-    }
-    
-    .back.image-6::after {
-        font-size: 70px;
-    }
-    
-    .back.image-7::after {
-        font-size: 70px;
-    }
-    
-    .back.image-8::after {
-        font-size: 70px;
-    }
-    
-    .back.image-9::after {
-        font-size: 70px;
-    }
-    
-    .back.image-10::after {
-        font-size: 70px;
-    }
-    
-    .back.image-11::after {
-        font-size: 70px;
-    }
-    
-    .back.image-12::after {
-        font-size: 70px;
-    }
-    
-    .back.image-13::after {
-        font-size: 70px;
-    }
-    
-    .back.image-14::after {
-        font-size: 70px;
-    }
-    
-    .back.image-15::after {
-        font-size: 70px;
-    }
-    
-    .back.image-16::after {
-        font-size: 70px;
-    }
-    
-    .back.image-17::after {
-        font-size: 70px;
-    }
-    
-    .back.image-18::after {
-        font-size: 70px;
-    }
-    
+
     .front::after {
+        font-size: 40px;
+    }
+
+    .back.image-1::after
+    , .back.image-2::after
+    , .back.image-3::after
+    , .back.image-4::after
+    , .back.image-5::after
+    , .back.image-6::after
+    , .back.image-7::after
+    , .back.image-8::after
+    , .back.image-11::after
+    , .back.image-12::after
+    , .back.image-13::after
+    , .back.image-14::after
+    , .back.image-15::after
+    , .back.image-16::after
+    , .back.image-17::after
+    , .back.image-18::after {
+       font-size: 50px;
+    }
+   
+    .back.image-9::after
+    , .back.image-10::after {
+       font-size: 50px;
+    }
+
+    .mayhem-1::after
+    , .mayhem-2::after
+    , .mayhem-3::after
+    , .mayhem-4::after
+    , .mayhem-5::after
+    , .mayhem-6::after
+    , .mayhem-7::after
+    , .mayhem-8::after
+    , .mayhem-11::after
+    , .mayhem-12::after
+    , .mayhem-13::after
+    , .mayhem-14::after
+    , .mayhem-15::after
+    , .mayhem-16::after
+    , .mayhem-17::after
+    , .mayhem-18::after {
+        font-size: 50px;
+    }
+
+    .mayhem-9::after
+    , .mayhem-10::after {
+        font-size: 50px;
+    }
+}
+
+@media all and (max-width:730px) {
+
+    .front::after {
+        font-size: 40px;
+    }
+
+    .back.image-1::after
+    , .back.image-2::after
+    , .back.image-3::after
+    , .back.image-4::after
+    , .back.image-5::after
+    , .back.image-6::after
+    , .back.image-7::after
+    , .back.image-8::after
+    , .back.image-11::after
+    , .back.image-12::after
+    , .back.image-13::after
+    , .back.image-14::after
+    , .back.image-15::after
+    , .back.image-16::after
+    , .back.image-17::after
+    , .back.image-18::after {
+       font-size: 40px;
+    }
+   
+    .back.image-9::after
+    , .back.image-10::after {
+       font-size: 40px;
+    }
+
+    .mayhem-1::after
+    , .mayhem-2::after
+    , .mayhem-3::after
+    , .mayhem-4::after
+    , .mayhem-5::after
+    , .mayhem-6::after
+    , .mayhem-7::after
+    , .mayhem-8::after
+    , .mayhem-11::after
+    , .mayhem-12::after
+    , .mayhem-13::after
+    , .mayhem-14::after
+    , .mayhem-15::after
+    , .mayhem-16::after
+    , .mayhem-17::after
+    , .mayhem-18::after {
+        font-size: 40px;
+    }
+
+    .mayhem-9::after
+    , .mayhem-10::after {
         font-size: 40px;
     }
 }
 
-@media all and (max-width:900px) {
-    .back.image-1::after {
-        font-size: 50px;
-    }
-    
-    .back.image-2::after {
-        font-size: 50px;
-    }
-    
-    .back.image-3::after {
-        font-size: 50px;
-    }
-    
-    .back.image-4::after {
-        font-size: 50px;
-    }
-    
-    .back.image-5::after {
-        font-size: 50px;
-    }
-    
-    .back.image-6::after {
-        font-size: 50px;
-    }
-    
-    .back.image-7::after {
-        font-size: 50px;
-    }
-    
-    .back.image-8::after {
-        font-size: 50px;
-    }
-    
-    .back.image-9::after {
-        font-size: 50px;
-    }
-    
-    .back.image-10::after {
-        font-size: 50px;
-    }
-    
-    .back.image-11::after {
-        font-size: 50px;
-    }
-    
-    .back.image-12::after {
-        font-size: 50px;
-    }
-    
-    .back.image-13::after {
-        font-size: 50px;
-    }
-    
-    .back.image-14::after {
-        font-size: 50px;
-    }
-    
-    .back.image-15::after {
-        font-size: 50px;
-    }
-    
-    .back.image-16::after {
-        font-size: 50px;
-    }
-    
-    .back.image-17::after {
-        font-size: 50px;
-    }
-    
-    .back.image-18::after {
-        font-size: 50px;
-    }
-    
+@media all and (max-width:540px) {
+
     .front::after {
+        font-size: 33px;
+    }
+
+    .back.image-1::after
+    , .back.image-2::after
+    , .back.image-3::after
+    , .back.image-4::after
+    , .back.image-5::after
+    , .back.image-6::after
+    , .back.image-7::after
+    , .back.image-8::after
+    , .back.image-11::after
+    , .back.image-12::after
+    , .back.image-13::after
+    , .back.image-14::after
+    , .back.image-15::after
+    , .back.image-16::after
+    , .back.image-17::after
+    , .back.image-18::after {
+       font-size: 33px;
+    }
+   
+    .back.image-9::after
+    , .back.image-10::after {
+       font-size: 33px;
+    }
+
+    .mayhem-1::after
+    , .mayhem-2::after
+    , .mayhem-3::after
+    , .mayhem-4::after
+    , .mayhem-5::after
+    , .mayhem-6::after
+    , .mayhem-7::after
+    , .mayhem-8::after
+    , .mayhem-11::after
+    , .mayhem-12::after
+    , .mayhem-13::after
+    , .mayhem-14::after
+    , .mayhem-15::after
+    , .mayhem-16::after
+    , .mayhem-17::after
+    , .mayhem-18::after {
+        font-size: 33px;
+    }
+
+    .mayhem-9::after
+    , .mayhem-10::after {
+        font-size: 33px;
+    }
+}
+
+@media all and (max-width:475px) {
+
+    .top-menu-section {
+        height: 100px;
+        font-size: .9em;
+    }
+
+    .top-menu-section h4 {
+        font-size: .8em;
+        letter-spacing: 3px;
+        padding: 3px 0px;
+    }
+
+    .stopwatch {
+        padding-top: 40%;
+    }
+
+    .score {
+        padding-top: 40%;
+    }
+
+    .menu-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .buttons {
+        font-size: .7em;
+    }
+    .reset-button {
+        
+        width: 20%;
+        font-size: 1em;
+        padding: 10px 0;
+        margin: 0;
+
+    }
+
+    .mode-button {
+        width: 20%;
+        border-radius: 4px;
+        font-size: 1em;
+        padding: 10px 0;
+        margin: 0;
+    }
+    .text-container {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+    }
+
+    .main {
+        width: 100%;
+        padding: 1% 0;
+    }
+
+    .front::after {
+        font-size: 40px;
+    }
+
+    .back.image-1::after
+    , .back.image-2::after
+    , .back.image-3::after
+    , .back.image-4::after
+    , .back.image-5::after
+    , .back.image-6::after
+    , .back.image-7::after
+    , .back.image-8::after
+    , .back.image-11::after
+    , .back.image-12::after
+    , .back.image-13::after
+    , .back.image-14::after
+    , .back.image-15::after
+    , .back.image-16::after
+    , .back.image-17::after
+    , .back.image-18::after {
+       font-size: 40px;
+    }
+   
+    .back.image-9::after
+    , .back.image-10::after {
+       font-size: 40px;
+    }
+
+    .mayhem-1::after
+    , .mayhem-2::after
+    , .mayhem-3::after
+    , .mayhem-4::after
+    , .mayhem-5::after
+    , .mayhem-6::after
+    , .mayhem-7::after
+    , .mayhem-8::after
+    , .mayhem-11::after
+    , .mayhem-12::after
+    , .mayhem-13::after
+    , .mayhem-14::after
+    , .mayhem-15::after
+    , .mayhem-16::after
+    , .mayhem-17::after
+    , .mayhem-18::after {
+        font-size: 40px;
+    }
+
+    .mayhem-9::after
+    , .mayhem-10::after {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .top-menu-section h4 {
+        letter-spacing: 1px;
+    }
+
+    .front::after {
+        font-size: 40px;
+    }
+
+    .back.image-1::after
+    , .back.image-2::after
+    , .back.image-3::after
+    , .back.image-4::after
+    , .back.image-5::after
+    , .back.image-6::after
+    , .back.image-7::after
+    , .back.image-8::after
+    , .back.image-11::after
+    , .back.image-12::after
+    , .back.image-13::after
+    , .back.image-14::after
+    , .back.image-15::after
+    , .back.image-16::after
+    , .back.image-17::after
+    , .back.image-18::after {
+       font-size: 40px;
+    }
+   
+    .back.image-9::after
+    , .back.image-10::after {
+       font-size: 40px;
+    }
+
+    .mayhem-1::after
+    , .mayhem-2::after
+    , .mayhem-3::after
+    , .mayhem-4::after
+    , .mayhem-5::after
+    , .mayhem-6::after
+    , .mayhem-7::after
+    , .mayhem-8::after
+    , .mayhem-11::after
+    , .mayhem-12::after
+    , .mayhem-13::after
+    , .mayhem-14::after
+    , .mayhem-15::after
+    , .mayhem-16::after
+    , .mayhem-17::after
+    , .mayhem-18::after {
+        font-size: 40px;
+    }
+
+    .mayhem-9::after
+    , .mayhem-10::after {
         font-size: 40px;
     }
 }
