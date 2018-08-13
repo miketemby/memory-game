@@ -27,10 +27,13 @@
 
 .top-menu-section { 
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 1080px;
     height: 100px;
 }
+
+
 
 .top-menu-section h4 { 
     border-bottom: 1px solid lightgrey;
@@ -46,6 +49,7 @@
 
 .menu-section-item-left {
     display: flex;
+    flex-wrap: wrap;
     width: 30%;
     text-align: center;
     /* margin: 1%; */
@@ -325,6 +329,17 @@
 .stars {
     color: rgb(0, 179, 191);
     font-size: 1.3em;
+}
+
+#star-rating {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#star-rating .stars {
+    font-size: .8em;
+    color: #ff4a9b;
 }
 
 .tile-clicked {
