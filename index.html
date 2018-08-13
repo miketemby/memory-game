@@ -12,30 +12,44 @@
     <body class="body">
         <div id="endgame-modal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
                 <ul class="results"></ul>
+                <button type="button" id="modal-reset-button" class="reset-button">REPLAY?</button>
             </div>
         </div>
+        <section class="top-menu-section">
+                <div class="menu-section-item-left">
+                    <section class="score-container">
+                        <div>
+                            <h4>Score</h4>
+                        </div>
+                        <div>
+                           <p class="score"></p>
+                        </div>
+                    </section>
+                    <section class="stopwatch-container">
+                        <div>
+                            <h4>Time</h4>
+                        </div>
+                        <div>
+                            <div class="stopwatch"></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="menu-section-item-right">
+                    <h4>Notification Centre</h4>
+                    <p class="info"></p>
+                </div>
+        </section>
         <section class="menu-section">
-            <div class="menu-section-item">
-                <h4>Info Log</h4>
-                <p class="info">Shuffle To Start</p>
-            </div>
-            <div class="menu-section-item">
-                <section class="stopwatch-container">
-                    <h4>Score</h4>
-                    <div class="stopwatch"></div>
-                    
-                </section>
-                <p class="score"></p>
-            </div>
             <div class="buttons">
+                <button type="button" id="reset-button" class="reset-button">RESET</button>
+                <div class="text-container">
+                    <p class="mode-text">Game Mode</p>
+                </div>
                 <button type="button" id="easy-button" class="mode-button">Easy</button>
                 <button type="button" id="hard-button" class="mode-button">Hard</button>
                 <button type="button" id="master-button" class="mode-button">Ninja</button>
                 <button type="button" id="mayhem-button" class="mode-button">Mayhem!!</button>
-                <button type="button" id="shuffle-button" class="shuffle-button">SHUFFLE</button>
-                <button type="button" id="reset-button" class="reset-button">RESET</button>
             </div>
         </section>
         <section class="main">
