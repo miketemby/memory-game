@@ -116,7 +116,7 @@
     width: 100%;
     margin: 0 1% 1% 1%;
     border-radius: 4px;
-    border-color: lightgray;
+    border: none;
     background: linear-gradient(35deg, #00ffcf, #0389bb);
     font-size: 1em;
     padding: 5px 30px;
@@ -134,7 +134,7 @@
     padding: 5px 30px;
     margin: 0 0 1% .5%;
     border-radius: 4px;
-    border-color: lightgray;
+    border: none;
     display: block;
 }
 
